@@ -6,7 +6,6 @@ public class ServerResponse {
     private String hangman;
     private Boolean correct;
     private Integer failedAttempts;
-
     private Boolean gameEnded;
 
     public ServerResponse() {
