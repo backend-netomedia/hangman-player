@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.net.URI;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netomedia.exam.hangman.model.ServerResponse;
@@ -16,7 +17,7 @@ public class HangmanServer {
     private static final String START_NEW_GAME_API = "http://netomedia-hangman.herokuapp.com/startNewGame";
     private static final String GUESS_API = "http://netomedia-hangman.herokuapp.com/guess";
 
-    DefaultHttpClient httpClient = new DefaultHttpClient();
+    HttpClient httpClient = HttpClientBuilder.create().build();
     final ObjectMapper objectMapper = new ObjectMapper();
 
     public ServerResponse startNewGame() throws Exception {
