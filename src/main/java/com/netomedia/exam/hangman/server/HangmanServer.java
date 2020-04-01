@@ -14,8 +14,8 @@ import com.netomedia.exam.hangman.model.ServerResponse;
 
 public class HangmanServer {
 
-    private static final String START_NEW_GAME_API = "http://netomedia-hangman.herokuapp.com/startNewGame";
-    private static final String GUESS_API = "http://netomedia-hangman.herokuapp.com/guess";
+    private static final String START_NEW_GAME_API = "http://localhost:8080/startNewGame";
+    private static final String GUESS_API = "http://localhost:8080/guess";
 
     HttpClient httpClient = HttpClientBuilder.create().build();
     final ObjectMapper objectMapper = new ObjectMapper();

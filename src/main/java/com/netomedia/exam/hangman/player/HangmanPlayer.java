@@ -9,6 +9,6 @@ public class HangmanPlayer {
     public static void main(String[] args) throws Exception {
         //Implement your Hangman Player here
 
-        //server.startNewGame()
+        //server.startNewGame();
     }
 }

@@ -7,17 +7,19 @@ public class ServerResponse {
     private Boolean correct;
     private Integer failedAttempts;
     private Boolean gameEnded;
+    private String error;
 
     public ServerResponse() {
 
     }
 
-    public ServerResponse(String token, String hangman, Boolean correct, Integer failedAttempts, Boolean gameEnded) {
+    public ServerResponse(String token, String hangman, Boolean correct, Integer failedAttempts, Boolean gameEnded, String error) {
         this.token = token;
         this.hangman = hangman;
         this.correct = correct;
         this.failedAttempts = failedAttempts;
         this.gameEnded = gameEnded;
+        this.error = error;
     }
 
     public String getToken() {
@@ -56,9 +58,17 @@ public class ServerResponse {
         return gameEnded;
     }
 
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
     @Override
     public String toString() {
         return "ServerResponse [token=" + token + ", hangman=" + hangman + ", correct=" + correct + ", failedAttempts=" + failedAttempts
-                + ", gameEnded=" + gameEnded + "]";
+                + ", gameEnded=" + gameEnded + ", error=" + error + "]";
     }
 }
