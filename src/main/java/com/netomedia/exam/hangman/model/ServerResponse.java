@@ -9,6 +9,10 @@ public class ServerResponse {
     private boolean gameEnded;
     private String error;
 
+    public ServerResponse() {
+
+    }
+
     public ServerResponse(String token, String hangman, int failedAttempts, String error) {
         this.token = token;
         this.hangman = hangman;
