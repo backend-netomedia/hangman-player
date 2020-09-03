@@ -5,20 +5,42 @@ public class ServerResponse {
     private String token;
     private String hangman;
     private Boolean correct;
-    private Integer failedAttempts;
-    private Boolean gameEnded;
+    private int failedAttempts;
+    private boolean gameEnded;
     private String error;
 
-    public ServerResponse() {
-
+    public ServerResponse(String token, String hangman, int failedAttempts, String error) {
+        this.token = token;
+        this.hangman = hangman;
+        this.failedAttempts = failedAttempts;
+        this.error = error;
     }
 
-    public ServerResponse(String token, String hangman, Boolean correct, Integer failedAttempts, Boolean gameEnded, String error) {
+    public ServerResponse(String token, String hangman) {
+        this.token = token;
+        this.hangman = hangman;
+    }
+
+    public ServerResponse(String token, String hangman, Boolean correct) {
         this.token = token;
         this.hangman = hangman;
         this.correct = correct;
-        this.failedAttempts = failedAttempts;
+    }
+
+    public ServerResponse(String token, String hangman, Boolean correct, boolean gameEnded, int failedAttempts) {
+        this.token = token;
+        this.hangman = hangman;
+        this.correct = correct;
         this.gameEnded = gameEnded;
+        this.failedAttempts = failedAttempts;
+    }
+
+    public ServerResponse(String token, String hangman, Boolean correct, boolean gameEnded, int failedAttempts, String error) {
+        this.token = token;
+        this.hangman = hangman;
+        this.correct = correct;
+        this.gameEnded = gameEnded;
+        this.failedAttempts = failedAttempts;
         this.error = error;
     }
 
@@ -26,35 +48,23 @@ public class ServerResponse {
         return token;
     }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
-
     public String getHangman() {
         return hangman;
-    }
-
-    public void setHangman(String hangman) {
-        this.hangman = hangman;
     }
 
     public Boolean isCorrect() {
         return correct;
     }
 
-    public void setCorrect(boolean correct) {
-        this.correct = correct;
-    }
-
-    public Integer getFailedAttempts() {
+    public int getFailedAttempts() {
         return failedAttempts;
     }
 
-    public void setFailedAttempts(Integer failedAttempts) {
-        this.failedAttempts = failedAttempts;
+    public Boolean getCorrect() {
+        return correct;
     }
 
-    public Boolean getGameEnded() {
+    public boolean isGameEnded() {
         return gameEnded;
     }
 
@@ -62,13 +72,10 @@ public class ServerResponse {
         return error;
     }
 
-    public void setError(String error) {
-        this.error = error;
-    }
-
     @Override
     public String toString() {
-        return "ServerResponse [token=" + token + ", hangman=" + hangman + ", correct=" + correct + ", failedAttempts=" + failedAttempts
-                + ", gameEnded=" + gameEnded + ", error=" + error + "]";
+        return "ServerResponse [token=" + token + ", hangman=" + hangman + ", correct=" + correct + ", failedAttempts="
+                + failedAttempts + ", gameEnded=" + gameEnded + "]";
     }
+
 }
